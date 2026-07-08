@@ -1,0 +1,16 @@
+{
+  "name": "alltooldeck-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:client": "npm run dev --workspace=apps/client",
+    "dev:server": "npm run dev --workspace=apps/server",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\""
+  },
+  "workspaces": [
+    "apps/*"
+  ],
+  "devDependencies": {
+    "concurrently": "^10.0.3"
+  }
+}

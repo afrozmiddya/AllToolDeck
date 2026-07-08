@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-heading: "Outfit", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-background: var(--bg);
+  --color-surface: var(--surface);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-muted: var(--muted);
+  --color-text: var(--text-color);
+  --color-border: var(--border-color);
+}
+
+@layer base {
+  :root {
+    --bg: #FFFFFF;
+    --surface: #F4F4F5;
+    --primary: #6366F1;
+    --accent: #8B5CF6;
+    --success: #22C55E;
+    --danger: #EF4444;
+    --muted: #71717A;
+    --text-color: #18181B;
+    --border-color: #E4E4E7;
+  }
+  
+  .dark {
+    --bg: #09090B;
+    --surface: #18181B;
+    --primary: #6366F1;
+    --accent: #8B5CF6;
+    --success: #22C55E;
+    --danger: #EF4444;
+    --muted: #A1A1AA;
+    --text-color: #FAFAFA;
+    --border-color: #27272A;
+  }
+}
+
+/* Custom Base Styles */
+@layer base {
+  body {
+    @apply bg-background text-text font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+
+  ::selection {
+    @apply bg-primary/30 text-white;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full hover:bg-muted/50 transition-colors;
+  }
+}
+
+/* Utility for glassmorphism */
+@layer utilities {
+  .glass-panel {
+    @apply bg-surface/60 backdrop-blur-md border border-border;
+  }
+}
