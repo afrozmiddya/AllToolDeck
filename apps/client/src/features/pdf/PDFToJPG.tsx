@@ -58,7 +58,7 @@ export const PDFToJPG: React.FC = () => {
         await page.render({
           canvasContext: context,
           viewport: viewport,
-        }).promise;
+        } as any).promise;
 
         const dataUrl = canvas.toDataURL("image/jpeg", 0.9);
         urls.push({

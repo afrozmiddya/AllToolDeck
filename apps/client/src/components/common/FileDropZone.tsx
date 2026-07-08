@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { useDropzone, DropzoneOptions } from "react-dropzone";
+import { useDropzone } from "react-dropzone";
 import { UploadCloud, File as FileIcon, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";

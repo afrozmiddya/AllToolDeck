@@ -32,8 +32,7 @@ export const CropImage: React.FC = () => {
     }
   };
 
-  const onImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    const { width, height } = e.currentTarget;
+  const onImageLoad = () => {
     setCrop({ unit: '%', width: 50, height: 50, x: 25, y: 25 });
   };
 
@@ -76,7 +75,7 @@ export const CropImage: React.FC = () => {
       });
 
       const format = file.name.split('.').pop() || 'png';
-      const blob = new Blob([response.data], { type: response.headers['content-type'] || `image/${format}` });
+      const blob = new Blob([response.data], { type: (response.headers['content-type'] as string) || `image/${format}` });
       const url = window.URL.createObjectURL(blob);
       setDownloadUrl(url);
       

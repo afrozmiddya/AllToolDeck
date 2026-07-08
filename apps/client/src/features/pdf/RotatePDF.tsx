@@ -41,7 +41,7 @@ export const RotatePDF: React.FC = () => {
       });
 
       const pdfBytes = await pdfDoc.save();
-      const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+      const blob = new Blob([pdfBytes as any], { type: 'application/pdf' });
       const url = window.URL.createObjectURL(blob);
       setDownloadUrl(url);
       

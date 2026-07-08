@@ -46,7 +46,7 @@ export const CompressPDF: React.FC = () => {
       // Saving without object streams can sometimes reduce size on messy PDFs
       const pdfBytes = await pdfDoc.save({ useObjectStreams: false });
       
-      const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+      const blob = new Blob([pdfBytes as any], { type: 'application/pdf' });
       const url = window.URL.createObjectURL(blob);
       setDownloadUrl(url);
       

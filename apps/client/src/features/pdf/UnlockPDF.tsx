@@ -43,10 +43,10 @@ export const UnlockPDF: React.FC = () => {
       // Load the document with the password
       // If the password is correct, pdf-lib parses it.
       // Saving it will result in an unencrypted file.
-      const pdfDoc = await PDFDocument.load(arrayBuffer, { password });
+      const pdfDoc = await PDFDocument.load(arrayBuffer, { password } as any);
 
       const pdfBytes = await pdfDoc.save();
-      const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+      const blob = new Blob([pdfBytes as any], { type: 'application/pdf' });
       const url = window.URL.createObjectURL(blob);
       setDownloadUrl(url);
       

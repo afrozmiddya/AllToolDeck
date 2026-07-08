@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { Type, AlignLeft, BarChart2, Clock } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const WordCounter: React.FC = () => {
   const [text, setText] = useState("");

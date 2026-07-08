@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Lock, Construction } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { FileDropZone } from "@/components/common/FileDropZone";
 
 export const ProtectPDF: React.FC = () => {
   return (

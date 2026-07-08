@@ -65,8 +65,8 @@ export const SplitPDF: React.FC = () => {
       copiedPages2.forEach((page) => part2.addPage(page));
       const pdfBytes2 = await part2.save();
 
-      const blob1 = new Blob([pdfBytes1], { type: 'application/pdf' });
-      const blob2 = new Blob([pdfBytes2], { type: 'application/pdf' });
+      const blob1 = new Blob([pdfBytes1 as any], { type: 'application/pdf' });
+      const blob2 = new Blob([pdfBytes2 as any], { type: 'application/pdf' });
 
       const originalName = file.name.split('.')[0];
       

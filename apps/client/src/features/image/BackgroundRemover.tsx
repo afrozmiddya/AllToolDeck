@@ -36,7 +36,7 @@ export const BackgroundRemover: React.FC = () => {
       const url = URL.createObjectURL(file);
       
       const blob = await removeBackground(url, {
-        progress: (key, current, total) => {
+        progress: (_key, current, total) => {
           // Progress can be jumpy, just show we are working
           const pct = Math.round((current / total) * 100);
           setProgress(isNaN(pct) ? 0 : pct);

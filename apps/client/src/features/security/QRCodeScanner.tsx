@@ -4,6 +4,7 @@ import jsQR from "jsqr";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 export const QRCodeScanner: React.FC = () => {
   const [result, setResult] = useState<string | null>(null);
