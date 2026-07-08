@@ -75,7 +75,7 @@ export const Layout: React.FC = () => {
       >
         <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-8">
           <Link to="/" className="flex items-center group cursor-pointer z-10 -ml-2 p-2">
-            <img src="/logo.png" alt="AllToolDeck Logo" className="h-10 md:h-30 w-auto object-contain drop-shadow-sm transition-opacity group-hover:opacity-80" />
+            <img src="https://res.cloudinary.com/dz0xmodpo/image/upload/v1783541482/logo_kprqro.png" alt="AllToolDeck Logo" className="h-10 md:h-30 w-auto object-contain drop-shadow-sm transition-opacity group-hover:opacity-80" />
           </Link>
 
           {/* Functional Search Bar */}
