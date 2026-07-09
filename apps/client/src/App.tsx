@@ -19,52 +19,56 @@ const HomePage = React.lazy(() => import("./features/home/HomePage"));
 const CategoryPage = React.lazy(() => import("./features/categories/CategoryPage"));
 const BlogPage = React.lazy(() => import("./features/blog/BlogPage"));
 const BlogPostPage = React.lazy(() => import("./features/blog/BlogPostPage"));
+const HtmlSitemap = React.lazy(() => import("./features/sitemap/HtmlSitemap"));
 const PrivacyPolicy = React.lazy(() => import("./pages/PrivacyPolicy").then(m => ({ default: m.PrivacyPolicy })));
 const TermsOfService = React.lazy(() => import("./pages/TermsOfService").then(m => ({ default: m.TermsOfService })));
 
-// Lazy Load PDF Tools
-const PdfMerger = React.lazy(() => import("./features/pdf/PdfMerger").then(m => ({ default: m.PdfMerger })));
-const SplitPDF = React.lazy(() => import("./features/pdf/SplitPDF").then(m => ({ default: m.SplitPDF })));
-const CompressPDF = React.lazy(() => import("./features/pdf/CompressPDF").then(m => ({ default: m.CompressPDF })));
-const RotatePDF = React.lazy(() => import("./features/pdf/RotatePDF").then(m => ({ default: m.RotatePDF })));
-const PDFToJPG = React.lazy(() => import("./features/pdf/PDFToJPG").then(m => ({ default: m.PDFToJPG })));
-const JPGToPDF = React.lazy(() => import("./features/pdf/JPGToPDF").then(m => ({ default: m.JPGToPDF })));
-const ProtectPDF = React.lazy(() => import("./features/pdf/ProtectPDF").then(m => ({ default: m.ProtectPDF })));
-const UnlockPDF = React.lazy(() => import("./features/pdf/UnlockPDF").then(m => ({ default: m.UnlockPDF })));
-const PDFToWord = React.lazy(() => import("./features/pdf/PDFToWord").then(m => ({ default: m.PDFToWord })));
-const WordToPDF = React.lazy(() => import("./features/pdf/WordToPDF").then(m => ({ default: m.WordToPDF })));
+// Programmatic Tool Lazy Loader Dictionary (To ensure maximum scalability)
+const toolLoaders: Record<string, React.LazyExoticComponent<React.ComponentType<any>>> = {
+  // PDF Tools
+  "/pdf/merge": React.lazy(() => import("./features/pdf/PdfMerger").then(m => ({ default: m.PdfMerger }))),
+  "/pdf/split": React.lazy(() => import("./features/pdf/SplitPDF").then(m => ({ default: m.SplitPDF }))),
+  "/pdf/compress": React.lazy(() => import("./features/pdf/CompressPDF").then(m => ({ default: m.CompressPDF }))),
+  "/pdf/rotate": React.lazy(() => import("./features/pdf/RotatePDF").then(m => ({ default: m.RotatePDF }))),
+  "/pdf/to-jpg": React.lazy(() => import("./features/pdf/PDFToJPG").then(m => ({ default: m.PDFToJPG }))),
+  "/pdf/from-jpg": React.lazy(() => import("./features/pdf/JPGToPDF").then(m => ({ default: m.JPGToPDF }))),
+  "/pdf/protect": React.lazy(() => import("./features/pdf/ProtectPDF").then(m => ({ default: m.ProtectPDF }))),
+  "/pdf/unlock": React.lazy(() => import("./features/pdf/UnlockPDF").then(m => ({ default: m.UnlockPDF }))),
+  "/pdf/to-word": React.lazy(() => import("./features/pdf/PDFToWord").then(m => ({ default: m.PDFToWord }))),
+  "/pdf/from-word": React.lazy(() => import("./features/pdf/WordToPDF").then(m => ({ default: m.WordToPDF }))),
 
-// Lazy Load Image Tools
-const ImageConverter = React.lazy(() => import("./features/image/ImageConverter").then(m => ({ default: m.ImageConverter })));
-const ResizeImage = React.lazy(() => import("./features/image/ResizeImage").then(m => ({ default: m.ResizeImage })));
-const CompressImage = React.lazy(() => import("./features/image/CompressImage").then(m => ({ default: m.CompressImage })));
-const CropImage = React.lazy(() => import("./features/image/CropImage").then(m => ({ default: m.CropImage })));
-const RotateImage = React.lazy(() => import("./features/image/RotateImage").then(m => ({ default: m.RotateImage })));
-const BackgroundRemover = React.lazy(() => import("./features/image/BackgroundRemover").then(m => ({ default: m.BackgroundRemover })));
-const ImageToPDF = React.lazy(() => import("./features/image/ImageToPDF").then(m => ({ default: m.ImageToPDF })));
+  // Image Tools
+  "/image/convert": React.lazy(() => import("./features/image/ImageConverter").then(m => ({ default: m.ImageConverter }))),
+  "/image/resize": React.lazy(() => import("./features/image/ResizeImage").then(m => ({ default: m.ResizeImage }))),
+  "/image/compress": React.lazy(() => import("./features/image/CompressImage").then(m => ({ default: m.CompressImage }))),
+  "/image/crop": React.lazy(() => import("./features/image/CropImage").then(m => ({ default: m.CropImage }))),
+  "/image/rotate": React.lazy(() => import("./features/image/RotateImage").then(m => ({ default: m.RotateImage }))),
+  "/image/background-remover": React.lazy(() => import("./features/image/BackgroundRemover").then(m => ({ default: m.BackgroundRemover }))),
+  "/image/to-pdf": React.lazy(() => import("./features/image/ImageToPDF").then(m => ({ default: m.ImageToPDF }))),
 
-// Lazy Load Text Tools
-const WordCounter = React.lazy(() => import("./features/text/WordCounter").then(m => ({ default: m.WordCounter })));
-const JsonFormatter = React.lazy(() => import("./features/text/JsonFormatter").then(m => ({ default: m.JsonFormatter })));
-const CaseConverter = React.lazy(() => import("./features/text/CaseConverter").then(m => ({ default: m.CaseConverter })));
-const RemoveExtraSpaces = React.lazy(() => import("./features/text/RemoveExtraSpaces").then(m => ({ default: m.RemoveExtraSpaces })));
-const RemoveDuplicateLines = React.lazy(() => import("./features/text/RemoveDuplicateLines").then(m => ({ default: m.RemoveDuplicateLines })));
-const ReverseText = React.lazy(() => import("./features/text/ReverseText").then(m => ({ default: m.ReverseText })));
-const SortLines = React.lazy(() => import("./features/text/SortLines").then(m => ({ default: m.SortLines })));
-const SlugGenerator = React.lazy(() => import("./features/text/SlugGenerator").then(m => ({ default: m.SlugGenerator })));
-const LoremIpsumGenerator = React.lazy(() => import("./features/text/LoremIpsumGenerator").then(m => ({ default: m.LoremIpsumGenerator })));
-const TextDifferenceChecker = React.lazy(() => import("./features/text/TextDifferenceChecker").then(m => ({ default: m.TextDifferenceChecker })));
+  // Text Tools
+  "/text/word-counter": React.lazy(() => import("./features/text/WordCounter").then(m => ({ default: m.WordCounter }))),
+  "/text/json-formatter": React.lazy(() => import("./features/text/JsonFormatter").then(m => ({ default: m.JsonFormatter }))),
+  "/text/case-converter": React.lazy(() => import("./features/text/CaseConverter").then(m => ({ default: m.CaseConverter }))),
+  "/text/remove-spaces": React.lazy(() => import("./features/text/RemoveExtraSpaces").then(m => ({ default: m.RemoveExtraSpaces }))),
+  "/text/remove-duplicates": React.lazy(() => import("./features/text/RemoveDuplicateLines").then(m => ({ default: m.RemoveDuplicateLines }))),
+  "/text/reverse": React.lazy(() => import("./features/text/ReverseText").then(m => ({ default: m.ReverseText }))),
+  "/text/sort": React.lazy(() => import("./features/text/SortLines").then(m => ({ default: m.SortLines }))),
+  "/text/slug-generator": React.lazy(() => import("./features/text/SlugGenerator").then(m => ({ default: m.SlugGenerator }))),
+  "/text/lorem-ipsum": React.lazy(() => import("./features/text/LoremIpsumGenerator").then(m => ({ default: m.LoremIpsumGenerator }))),
+  "/text/difference": React.lazy(() => import("./features/text/TextDifferenceChecker").then(m => ({ default: m.TextDifferenceChecker }))),
 
-// Lazy Load Security Tools
-const PasswordGenerator = React.lazy(() => import("./features/security/PasswordGenerator").then(m => ({ default: m.PasswordGenerator })));
-const PasswordStrengthChecker = React.lazy(() => import("./features/security/PasswordStrengthChecker").then(m => ({ default: m.PasswordStrengthChecker })));
-const Base64Converter = React.lazy(() => import("./features/security/Base64Converter").then(m => ({ default: m.Base64Converter })));
-const SHA256Generator = React.lazy(() => import("./features/security/SHA256Generator").then(m => ({ default: m.SHA256Generator })));
-const MD5Generator = React.lazy(() => import("./features/security/MD5Generator").then(m => ({ default: m.MD5Generator })));
-const URLEncoderDecoder = React.lazy(() => import("./features/security/URLEncoderDecoder").then(m => ({ default: m.URLEncoderDecoder })));
-const JWTDecoder = React.lazy(() => import("./features/security/JWTDecoder").then(m => ({ default: m.JWTDecoder })));
-const QRCodeGenerator = React.lazy(() => import("./features/security/QRCodeGenerator").then(m => ({ default: m.QRCodeGenerator })));
-const QRCodeScanner = React.lazy(() => import("./features/security/QRCodeScanner").then(m => ({ default: m.QRCodeScanner })));
+  // Security Tools
+  "/security/password-generator": React.lazy(() => import("./features/security/PasswordGenerator").then(m => ({ default: m.PasswordGenerator }))),
+  "/security/password-strength": React.lazy(() => import("./features/security/PasswordStrengthChecker").then(m => ({ default: m.PasswordStrengthChecker }))),
+  "/security/base64": React.lazy(() => import("./features/security/Base64Converter").then(m => ({ default: m.Base64Converter }))),
+  "/security/sha256": React.lazy(() => import("./features/security/SHA256Generator").then(m => ({ default: m.SHA256Generator }))),
+  "/security/md5": React.lazy(() => import("./features/security/MD5Generator").then(m => ({ default: m.MD5Generator }))),
+  "/security/url": React.lazy(() => import("./features/security/URLEncoderDecoder").then(m => ({ default: m.URLEncoderDecoder }))),
+  "/security/jwt": React.lazy(() => import("./features/security/JWTDecoder").then(m => ({ default: m.JWTDecoder }))),
+  "/security/qr-generator": React.lazy(() => import("./features/security/QRCodeGenerator").then(m => ({ default: m.QRCodeGenerator }))),
+  "/security/qr-scanner": React.lazy(() => import("./features/security/QRCodeScanner").then(m => ({ default: m.QRCodeScanner })))
+};
 
 export const App: React.FC = () => {
   return (
@@ -81,10 +85,11 @@ export const App: React.FC = () => {
               
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<TermsOfService />} />
+              <Route path="/sitemap" element={<HtmlSitemap />} />
               <Route path="/blog" element={<BlogPage />} />
               <Route path="/blog/:slug" element={<BlogPostPage />} />
               
-              {/* Dynamic Category Landing Pages */}
+              {/* Category Landing Pages */}
               <Route path="/pdf" element={<CategoryPage categoryKey="pdf" />} />
               <Route path="/image" element={<CategoryPage categoryKey="image" />} />
               <Route path="/text" element={<CategoryPage categoryKey="text" />} />
@@ -94,49 +99,14 @@ export const App: React.FC = () => {
               <Route path="/calculators" element={<CategoryPage categoryKey="calculators" />} />
               <Route path="/security" element={<CategoryPage categoryKey="security" />} />
 
-              {/* PDF Tool Routes */}
-              <Route path="/pdf/merge" element={<ToolLayout><PdfMerger /></ToolLayout>} />
-              <Route path="/pdf/split" element={<ToolLayout><SplitPDF /></ToolLayout>} />
-              <Route path="/pdf/compress" element={<ToolLayout><CompressPDF /></ToolLayout>} />
-              <Route path="/pdf/rotate" element={<ToolLayout><RotatePDF /></ToolLayout>} />
-              <Route path="/pdf/to-jpg" element={<ToolLayout><PDFToJPG /></ToolLayout>} />
-              <Route path="/pdf/from-jpg" element={<ToolLayout><JPGToPDF /></ToolLayout>} />
-              <Route path="/pdf/protect" element={<ToolLayout><ProtectPDF /></ToolLayout>} />
-              <Route path="/pdf/unlock" element={<ToolLayout><UnlockPDF /></ToolLayout>} />
-              <Route path="/pdf/to-word" element={<ToolLayout><PDFToWord /></ToolLayout>} />
-              <Route path="/pdf/from-word" element={<ToolLayout><WordToPDF /></ToolLayout>} />
-              
-              {/* Image Tool Routes */}
-              <Route path="/image/convert" element={<ToolLayout><ImageConverter /></ToolLayout>} />
-              <Route path="/image/resize" element={<ToolLayout><ResizeImage /></ToolLayout>} />
-              <Route path="/image/compress" element={<ToolLayout><CompressImage /></ToolLayout>} />
-              <Route path="/image/crop" element={<ToolLayout><CropImage /></ToolLayout>} />
-              <Route path="/image/rotate" element={<ToolLayout><RotateImage /></ToolLayout>} />
-              <Route path="/image/background-remover" element={<ToolLayout><BackgroundRemover /></ToolLayout>} />
-              <Route path="/image/to-pdf" element={<ToolLayout><ImageToPDF /></ToolLayout>} />
-              
-              {/* Text Tool Routes */}
-              <Route path="/text/word-counter" element={<ToolLayout><WordCounter /></ToolLayout>} />
-              <Route path="/text/json-formatter" element={<ToolLayout><JsonFormatter /></ToolLayout>} />
-              <Route path="/text/case-converter" element={<ToolLayout><CaseConverter /></ToolLayout>} />
-              <Route path="/text/remove-spaces" element={<ToolLayout><RemoveExtraSpaces /></ToolLayout>} />
-              <Route path="/text/remove-duplicates" element={<ToolLayout><RemoveDuplicateLines /></ToolLayout>} />
-              <Route path="/text/reverse" element={<ToolLayout><ReverseText /></ToolLayout>} />
-              <Route path="/text/sort" element={<ToolLayout><SortLines /></ToolLayout>} />
-              <Route path="/text/slug-generator" element={<ToolLayout><SlugGenerator /></ToolLayout>} />
-              <Route path="/text/lorem-ipsum" element={<ToolLayout><LoremIpsumGenerator /></ToolLayout>} />
-              <Route path="/text/difference" element={<ToolLayout><TextDifferenceChecker /></ToolLayout>} />
-
-              {/* Security Tool Routes */}
-              <Route path="/security/password-generator" element={<ToolLayout><PasswordGenerator /></ToolLayout>} />
-              <Route path="/security/password-strength" element={<ToolLayout><PasswordStrengthChecker /></ToolLayout>} />
-              <Route path="/security/base64" element={<ToolLayout><Base64Converter /></ToolLayout>} />
-              <Route path="/security/sha256" element={<ToolLayout><SHA256Generator /></ToolLayout>} />
-              <Route path="/security/md5" element={<ToolLayout><MD5Generator /></ToolLayout>} />
-              <Route path="/security/url" element={<ToolLayout><URLEncoderDecoder /></ToolLayout>} />
-              <Route path="/security/jwt" element={<ToolLayout><JWTDecoder /></ToolLayout>} />
-              <Route path="/security/qr-generator" element={<ToolLayout><QRCodeGenerator /></ToolLayout>} />
-              <Route path="/security/qr-scanner" element={<ToolLayout><QRCodeScanner /></ToolLayout>} />
+              {/* Mapped Programmatic Tool Routes */}
+              {Object.entries(toolLoaders).map(([path, Component]) => (
+                <Route 
+                  key={path} 
+                  path={path} 
+                  element={<ToolLayout><Component /></ToolLayout>} 
+                />
+              ))}
               
               {/* 404 Route */}
               <Route path="*" element={<div className="py-20 text-center text-xl text-zinc-500">Page not found</div>} />
