@@ -1,0 +1,57 @@
+# AllToolDeck
+
+AllToolDeck is a premium browser-based productivity suite containing fast, secure, and privacy-focused utilities for developers, designers, and creators. All operations (PDF manipulation, image editing, hashing, formatting) are executed entirely client-side using JavaScript, WebGL, and WASM. Your files are never uploaded to any remote server.
+
+- **URL**: https://alltooldeck.netlify.app/
+- **Hosting**: Netlify
+- **Technology Stack**: React, Vite, TailwindCSS, TypeScript, pdf-lib, PDF.js, jsQR, @imgly/background-removal.
+
+## Tool Categories & Paths
+
+### PDF Tools (/pdf)
+- **Merge PDFs** (`/pdf/merge`): Combine multiple PDF documents into a single file.
+- **Split PDF** (`/pdf/split`): Split a multi-page PDF into two parts.
+- **Compress PDF** (`/pdf/compress`): Reduce PDF size by removing redundant metadata.
+- **Rotate PDF** (`/pdf/rotate`): Rotate pages of a PDF document in 90-degree increments.
+- **PDF to JPG** (`/pdf/to-jpg`): Extract PDF pages as high-quality JPEG images.
+- **JPG to PDF** (`/pdf/from-jpg`): Convert one or more images into a structured PDF document.
+- **Protect PDF** (`/pdf/protect`): Add a password to restrict document access.
+- **Unlock PDF** (`/pdf/unlock`): Remove password encryption from a document.
+- **PDF to Word** (`/pdf/to-word`): Extract text content into standard Microsoft Word document layout.
+- **Word to PDF** (`/pdf/from-word`): Convert Word files to portable documents.
+
+### Image Tools (/image)
+- **Image Converter** (`/image/convert`): Swap formats between JPEG, PNG, and WebP instantly.
+- **Resize Image** (`/image/resize`): Change width and height parameters in pixels.
+- **Compress Image** (`/image/compress`): Reduce file sizes while maintaining layout quality.
+- **Crop Image** (`/image/crop`): Crop image sections using canvas tools.
+- **Rotate Image** (`/image/rotate`): Rotate orientation.
+- **Background Remover** (`/image/background-remover`): Run client-side AI background extraction using WebGL.
+- **Image to PDF** (`/image/to-pdf`): Place images inside a standard PDF wrapper.
+
+### Text Tools (/text)
+- **Word Counter** (`/text/word-counter`): Count characters, words, spaces, sentences, paragraphs, and estimate reading time.
+- **JSON Formatter** (`/text/json-formatter`): Validate, format, indent, or minify JSON structures.
+- **Case Converter** (`/text/case-converter`): Shift casing (lowercase, UPPERCASE, Title Case, Sentence case).
+- **Remove Spaces** (`/text/remove-spaces`): Strip consecutive spaces, line breaks, or trim edges.
+- **Remove Duplicates** (`/text/remove-duplicates`): Find and remove duplicate lines.
+- **Reverse Text** (`/text/reverse`): Reverse characters, lines, or words.
+- **Sort Lines** (`/text/sort`): Sort line lists alphabetically.
+- **Slug Generator** (`/text/slug-generator`): Convert text to clean, URL-friendly strings.
+- **Lorem Ipsum** (`/text/lorem-ipsum`): Generate random paragraph mock placeholders.
+- **Difference Checker** (`/text/difference`): Highlight variations between two input strings.
+
+### Security Tools (/security)
+- **Password Generator** (`/security/password-generator`): Generate secure passwords locally with length and character rules.
+- **Strength Checker** (`/security/password-strength`): Validate entropy and time-to-crack using zxcvbn.
+- **Base64 Converter** (`/security/base64`): Encode or decode text structures.
+- **SHA-256 Hash** (`/security/sha256`): Generate cryptographic hashes.
+- **MD5 Hash** (`/security/md5`): Generate checksum files.
+- **URL Encoder** (`/security/url`): Convert text to URL-encoded parameters.
+- **JWT Decoder** (`/security/jwt`): Decode headers and payloads locally.
+- **QR Code Generator** (`/security/qr-generator`): Make custom downloadable QR codes.
+- **QR Code Scanner** (`/security/qr-scanner`): Read QR codes from uploaded images.
+
+## Articles & Blog (/blog)
+- **Blog Listing** (`/blog`): Read guides on online privacy, local utility benefits, and security practices.
+- **Featured Post** (`/blog/why-browser-based-tools-are-safer`): Explaining why browser-based tools are significantly safer than cloud-upload tools.

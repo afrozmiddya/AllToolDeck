@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import { Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { SEO } from "./SEO";
+import { toolsRegistry } from "@/data/toolsRegistry";
 
 const SEARCH_TOOLS = [
   { path: "/pdf/to-word", name: "PDF to Word", category: "PDF" },
@@ -48,6 +50,8 @@ const SEARCH_TOOLS = [
 export const Layout: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const isToolPage = !!toolsRegistry[location.pathname];
+  const isBlogPage = location.pathname.startsWith("/blog");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,6 +63,33 @@ export const Layout: React.FC = () => {
 
   return (
     <div className="relative flex min-h-screen flex-col overflow-hidden text-text">
+      {!isToolPage && !isBlogPage && (
+        <SEO 
+          title={
+            location.pathname === "/" 
+              ? "AllToolDeck - Free Browser-Based Productivity Tools" 
+              : location.pathname === "/privacy"
+              ? "Privacy Policy - AllToolDeck"
+              : location.pathname === "/terms"
+              ? "Terms of Service - AllToolDeck"
+              : "AllToolDeck - Productivity Suite"
+          }
+          description={
+            location.pathname === "/"
+              ? "Access free browser-based productivity tools. Secure, lightning fast utilities for PDF merging, image compression, JSON formatting, password generation, and more."
+              : "Privacy policy and security compliance parameters for AllToolDeck client-side tools."
+          }
+          canonicalUrl={`https://alltooldeck.netlify.app${location.pathname}`}
+          schemas={[
+            {
+              "@type": "Organization",
+              "name": "AllToolDeck",
+              "url": "https://alltooldeck.netlify.app/",
+              "logo": "https://res.cloudinary.com/dz0xmodpo/image/upload/v1783541482/logo_kprqro.png"
+            }
+          ]}
+        />
+      )}
       {/* Ambient Glowing Background */}
       <div className="pointer-events-none fixed inset-0 z-0 flex justify-center">
         <div className="absolute -top-[20%] left-1/2 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-primary/20 opacity-30 blur-[120px] mix-blend-screen" />
@@ -163,6 +194,7 @@ export const Layout: React.FC = () => {
             <Link to="/image" className="transition-colors hover:text-primary text-muted cursor-pointer hidden sm:block">Image</Link>
             <Link to="/text" className="transition-colors hover:text-primary text-muted cursor-pointer hidden sm:block">Text</Link>
             <Link to="/security" className="transition-colors hover:text-primary text-muted cursor-pointer hidden sm:block">Security</Link>
+            <Link to="/blog" className="transition-colors hover:text-primary text-muted cursor-pointer">Blog</Link>
           </nav>
         </div>
       </header>

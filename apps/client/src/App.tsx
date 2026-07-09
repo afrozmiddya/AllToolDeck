@@ -2,6 +2,9 @@ import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Layout } from "./components/common/Layout";
+import { ToolLayout } from "./components/common/ToolLayout";
+import { BlogPage } from "./features/blog/BlogPage";
+import { BlogPostPage } from "./features/blog/BlogPostPage";
 import { motion } from "framer-motion";
 import { 
   FileText, Image as ImageIcon, Type, Shield, 
@@ -196,6 +199,8 @@ export const App: React.FC = () => {
             
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
             
             {/* Category Placeholder Routes */}
             <Route path="/pdf" element={
@@ -223,16 +228,16 @@ export const App: React.FC = () => {
                 </motion.div>
               </div>
             } />
-            <Route path="/pdf/merge" element={<PdfMerger />} />
-            <Route path="/pdf/split" element={<SplitPDF />} />
-            <Route path="/pdf/compress" element={<CompressPDF />} />
-            <Route path="/pdf/rotate" element={<RotatePDF />} />
-            <Route path="/pdf/to-jpg" element={<PDFToJPG />} />
-            <Route path="/pdf/from-jpg" element={<JPGToPDF />} />
-            <Route path="/pdf/protect" element={<ProtectPDF />} />
-            <Route path="/pdf/unlock" element={<UnlockPDF />} />
-            <Route path="/pdf/to-word" element={<PDFToWord />} />
-            <Route path="/pdf/from-word" element={<WordToPDF />} />
+            <Route path="/pdf/merge" element={<ToolLayout><PdfMerger /></ToolLayout>} />
+            <Route path="/pdf/split" element={<ToolLayout><SplitPDF /></ToolLayout>} />
+            <Route path="/pdf/compress" element={<ToolLayout><CompressPDF /></ToolLayout>} />
+            <Route path="/pdf/rotate" element={<ToolLayout><RotatePDF /></ToolLayout>} />
+            <Route path="/pdf/to-jpg" element={<ToolLayout><PDFToJPG /></ToolLayout>} />
+            <Route path="/pdf/from-jpg" element={<ToolLayout><JPGToPDF /></ToolLayout>} />
+            <Route path="/pdf/protect" element={<ToolLayout><ProtectPDF /></ToolLayout>} />
+            <Route path="/pdf/unlock" element={<ToolLayout><UnlockPDF /></ToolLayout>} />
+            <Route path="/pdf/to-word" element={<ToolLayout><PDFToWord /></ToolLayout>} />
+            <Route path="/pdf/from-word" element={<ToolLayout><WordToPDF /></ToolLayout>} />
             
             <Route path="/image" element={
               <div className="space-y-8 relative z-10">
@@ -259,13 +264,13 @@ export const App: React.FC = () => {
                 </motion.div>
               </div>
             } />
-            <Route path="/image/convert" element={<ImageConverter />} />
-            <Route path="/image/resize" element={<ResizeImage />} />
-            <Route path="/image/compress" element={<CompressImage />} />
-            <Route path="/image/crop" element={<CropImage />} />
-            <Route path="/image/rotate" element={<RotateImage />} />
-            <Route path="/image/background-remover" element={<BackgroundRemover />} />
-            <Route path="/image/to-pdf" element={<ImageToPDF />} />
+            <Route path="/image/convert" element={<ToolLayout><ImageConverter /></ToolLayout>} />
+            <Route path="/image/resize" element={<ToolLayout><ResizeImage /></ToolLayout>} />
+            <Route path="/image/compress" element={<ToolLayout><CompressImage /></ToolLayout>} />
+            <Route path="/image/crop" element={<ToolLayout><CropImage /></ToolLayout>} />
+            <Route path="/image/rotate" element={<ToolLayout><RotateImage /></ToolLayout>} />
+            <Route path="/image/background-remover" element={<ToolLayout><BackgroundRemover /></ToolLayout>} />
+            <Route path="/image/to-pdf" element={<ToolLayout><ImageToPDF /></ToolLayout>} />
             
             <Route path="/text" element={
               <div className="space-y-8 relative z-10">
@@ -292,16 +297,16 @@ export const App: React.FC = () => {
                 </motion.div>
               </div>
             } />
-            <Route path="/text/word-counter" element={<WordCounter />} />
-            <Route path="/text/json-formatter" element={<JsonFormatter />} />
-            <Route path="/text/case-converter" element={<CaseConverter />} />
-            <Route path="/text/remove-spaces" element={<RemoveExtraSpaces />} />
-            <Route path="/text/remove-duplicates" element={<RemoveDuplicateLines />} />
-            <Route path="/text/reverse" element={<ReverseText />} />
-            <Route path="/text/sort" element={<SortLines />} />
-            <Route path="/text/slug-generator" element={<SlugGenerator />} />
-            <Route path="/text/lorem-ipsum" element={<LoremIpsumGenerator />} />
-            <Route path="/text/difference" element={<TextDifferenceChecker />} />
+            <Route path="/text/word-counter" element={<ToolLayout><WordCounter /></ToolLayout>} />
+            <Route path="/text/json-formatter" element={<ToolLayout><JsonFormatter /></ToolLayout>} />
+            <Route path="/text/case-converter" element={<ToolLayout><CaseConverter /></ToolLayout>} />
+            <Route path="/text/remove-spaces" element={<ToolLayout><RemoveExtraSpaces /></ToolLayout>} />
+            <Route path="/text/remove-duplicates" element={<ToolLayout><RemoveDuplicateLines /></ToolLayout>} />
+            <Route path="/text/reverse" element={<ToolLayout><ReverseText /></ToolLayout>} />
+            <Route path="/text/sort" element={<ToolLayout><SortLines /></ToolLayout>} />
+            <Route path="/text/slug-generator" element={<ToolLayout><SlugGenerator /></ToolLayout>} />
+            <Route path="/text/lorem-ipsum" element={<ToolLayout><LoremIpsumGenerator /></ToolLayout>} />
+            <Route path="/text/difference" element={<ToolLayout><TextDifferenceChecker /></ToolLayout>} />
 
             <Route path="/security" element={
               <div className="space-y-8 relative z-10">
@@ -329,15 +334,15 @@ export const App: React.FC = () => {
               </div>
             } />
 
-            <Route path="/security/password-generator" element={<PasswordGenerator />} />
-            <Route path="/security/password-strength" element={<PasswordStrengthChecker />} />
-            <Route path="/security/base64" element={<Base64Converter />} />
-            <Route path="/security/sha256" element={<SHA256Generator />} />
-            <Route path="/security/md5" element={<MD5Generator />} />
-            <Route path="/security/url" element={<URLEncoderDecoder />} />
-            <Route path="/security/jwt" element={<JWTDecoder />} />
-            <Route path="/security/qr-generator" element={<QRCodeGenerator />} />
-            <Route path="/security/qr-scanner" element={<QRCodeScanner />} />
+            <Route path="/security/password-generator" element={<ToolLayout><PasswordGenerator /></ToolLayout>} />
+            <Route path="/security/password-strength" element={<ToolLayout><PasswordStrengthChecker /></ToolLayout>} />
+            <Route path="/security/base64" element={<ToolLayout><Base64Converter /></ToolLayout>} />
+            <Route path="/security/sha256" element={<ToolLayout><SHA256Generator /></ToolLayout>} />
+            <Route path="/security/md5" element={<ToolLayout><MD5Generator /></ToolLayout>} />
+            <Route path="/security/url" element={<ToolLayout><URLEncoderDecoder /></ToolLayout>} />
+            <Route path="/security/jwt" element={<ToolLayout><JWTDecoder /></ToolLayout>} />
+            <Route path="/security/qr-generator" element={<ToolLayout><QRCodeGenerator /></ToolLayout>} />
+            <Route path="/security/qr-scanner" element={<ToolLayout><QRCodeScanner /></ToolLayout>} />
             
             {/* 404 Route */}
             <Route path="*" element={<div className="py-20 text-center text-xl text-zinc-500">Page not found</div>} />
