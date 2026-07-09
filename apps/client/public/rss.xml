@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>AllToolDeck Blog</title>
+  <link>https://alltooldeck.netlify.app/blog</link>
+  <description>Stay updated with expert articles on browser security, client-side WASM performance, and online tool privacy guides.</description>
+  <language>en-us</language>
+  <lastBuildDate>Thu, 09 Jul 2026 15:37:20 GMT</lastBuildDate>
+  <atom:link href="https://alltooldeck.netlify.app/rss.xml" rel="self" type="application/rss+xml" />
+  
+    <item>
+    <title>Why Browser-Based Tools are Safer for Your Data</title>
+    <link>https://alltooldeck.netlify.app/blog/why-browser-based-tools-are-safer</link>
+    <guid>https://alltooldeck.netlify.app/blog/why-browser-based-tools-are-safer</guid>
+    <pubDate>Thu, 09 Jul 2026 00:00:00 GMT</pubDate>
+    <author>AllToolDeck Security Team</author>
+    <description>Learn why client-side browser tools are significantly more secure than traditional cloud upload tools. Protect your data privacy and prevent leaks.</description>
+  </item>
+</channel>
+</rss>
