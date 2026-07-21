@@ -8,6 +8,8 @@ import {
   Settings, ShieldAlert, Award
 } from "lucide-react";
 
+import { Container } from "./PageLayout";
+
 interface ToolLayoutProps {
   children: React.ReactNode;
 }
@@ -113,7 +115,7 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ children }) => {
   }
 
   return (
-    <div className="max-w-5xl mx-auto py-4 space-y-10">
+    <Container size="5xl" className="py-4 space-y-10">
       <SEO 
         title={tool.title} 
         description={tool.description} 
@@ -144,10 +146,13 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ children }) => {
       </header>
 
       {/* Main workspace navigation tabs */}
-      <nav aria-label="Tool sections" className="flex flex-wrap border-b border-border/30 text-sm font-medium">
+      <nav 
+        aria-label="Tool sections" 
+        className="flex overflow-x-auto whitespace-nowrap border-b border-border/30 text-sm font-medium scrollbar-none -mx-4 px-4 md:mx-0 md:px-0"
+      >
         <button
           onClick={() => setActiveTab("tool")}
-          className={`px-4 py-2 border-b-2 -mb-[2px] transition-colors focus:outline-none ${
+          className={`flex-shrink-0 px-4 py-2 border-b-2 -mb-[2px] transition-colors focus:outline-none ${
             activeTab === "tool" ? "border-primary text-primary" : "border-transparent text-muted hover:text-text"
           }`}
         >
@@ -155,7 +160,7 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ children }) => {
         </button>
         <button
           onClick={() => setActiveTab("guide")}
-          className={`px-4 py-2 border-b-2 -mb-[2px] transition-colors focus:outline-none ${
+          className={`flex-shrink-0 px-4 py-2 border-b-2 -mb-[2px] transition-colors focus:outline-none ${
             activeTab === "guide" ? "border-primary text-primary" : "border-transparent text-muted hover:text-text"
           }`}
         >
@@ -163,7 +168,7 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ children }) => {
         </button>
         <button
           onClick={() => setActiveTab("features")}
-          className={`px-4 py-2 border-b-2 -mb-[2px] transition-colors focus:outline-none ${
+          className={`flex-shrink-0 px-4 py-2 border-b-2 -mb-[2px] transition-colors focus:outline-none ${
             activeTab === "features" ? "border-primary text-primary" : "border-transparent text-muted hover:text-text"
           }`}
         >
@@ -171,7 +176,7 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ children }) => {
         </button>
         <button
           onClick={() => setActiveTab("comparison")}
-          className={`px-4 py-2 border-b-2 -mb-[2px] transition-colors focus:outline-none ${
+          className={`flex-shrink-0 px-4 py-2 border-b-2 -mb-[2px] transition-colors focus:outline-none ${
             activeTab === "comparison" ? "border-primary text-primary" : "border-transparent text-muted hover:text-text"
           }`}
         >
@@ -179,7 +184,7 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ children }) => {
         </button>
         <button
           onClick={() => setActiveTab("alternatives")}
-          className={`px-4 py-2 border-b-2 -mb-[2px] transition-colors focus:outline-none ${
+          className={`flex-shrink-0 px-4 py-2 border-b-2 -mb-[2px] transition-colors focus:outline-none ${
             activeTab === "alternatives" ? "border-primary text-primary" : "border-transparent text-muted hover:text-text"
           }`}
         >
@@ -187,7 +192,7 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ children }) => {
         </button>
         <button
           onClick={() => setActiveTab("faq")}
-          className={`px-4 py-2 border-b-2 -mb-[2px] transition-colors focus:outline-none ${
+          className={`flex-shrink-0 px-4 py-2 border-b-2 -mb-[2px] transition-colors focus:outline-none ${
             activeTab === "faq" ? "border-primary text-primary" : "border-transparent text-muted hover:text-text"
           }`}
         >
@@ -196,9 +201,9 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ children }) => {
       </nav>
 
       {/* Dynamic Tab Body */}
-      <main className="w-full">
+      <main className="w-full mt-2">
         {activeTab === "tool" && (
-          <div className="relative z-10 w-full bg-surface/20 border border-border/40 rounded-3xl p-6 md:p-8 backdrop-blur-md shadow-xl">
+          <div className="w-full [&>div]:max-w-none [&>div]:py-0 [&>div]:mx-0">
             {children}
           </div>
         )}
@@ -353,7 +358,7 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ children }) => {
           ))}
         </div>
       </section>
-    </div>
+    </Container>
   );
 };
 export default ToolLayout;

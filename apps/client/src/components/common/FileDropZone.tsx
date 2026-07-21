@@ -51,7 +51,7 @@ export const FileDropZone: React.FC<FileDropZoneProps> = ({
       <div
         {...getRootProps()}
         className={cn(
-          "relative flex flex-col items-center justify-center w-full p-12 border-2 border-dashed rounded-2xl transition-all duration-200 cursor-pointer overflow-hidden group",
+          "relative flex flex-col items-center justify-center w-full min-h-[180px] sm:min-h-[220px] p-6 sm:p-8 md:p-10 border-2 border-dashed rounded-2xl transition-all duration-200 cursor-pointer overflow-hidden group",
           isDragActive 
             ? "border-primary bg-primary/5 shadow-[0_0_40px_rgba(99,102,241,0.1)]" 
             : "border-border bg-surface/30 hover:bg-surface/60 hover:border-border/80 hover:shadow-lg hover:shadow-black/20",
@@ -62,23 +62,23 @@ export const FileDropZone: React.FC<FileDropZoneProps> = ({
         <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
         
         <input {...getInputProps()} />
-        <div className="relative z-10 flex flex-col items-center text-center space-y-4">
+        <div className="relative z-10 flex flex-col items-center text-center gap-3 md:gap-4 w-full max-w-lg">
           <div className={cn(
-            "p-4 rounded-xl transition-all duration-300",
+            "p-3 rounded-xl transition-all duration-300",
             isDragActive ? "bg-primary/20 text-primary scale-110" : "bg-surface border border-border text-primary group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary/10",
             isDragReject && "bg-danger/20 text-danger"
           )}>
-            <UploadCloud className={cn("w-8 h-8 transition-transform duration-300", isDragActive && "animate-bounce")} />
+            <UploadCloud className={cn("w-6 h-6 sm:w-8 sm:h-8 transition-transform duration-300", isDragActive && "animate-bounce")} />
           </div>
-          <div>
-            <h3 className="font-heading font-semibold text-lg text-text">
+          <div className="w-full">
+            <h3 className="font-heading font-semibold text-base sm:text-lg text-text">
               {isDragReject ? "File type not supported" : (isDragActive ? "Drop file now" : title)}
             </h3>
-            <p className="text-sm text-muted max-w-xs mx-auto mt-1">
+            <p className="text-xs sm:text-sm text-muted mt-1 leading-relaxed max-w-sm sm:max-w-md mx-auto">
               {description}
             </p>
           </div>
-          <div className="flex items-center gap-2 pt-4">
+          <div className="flex items-center gap-2 pt-2">
             <span className="text-[10px] font-mono font-medium uppercase tracking-wider text-muted bg-surface px-2 py-1 rounded-md border border-border">
               Max {maxSizeMB}MB
             </span>

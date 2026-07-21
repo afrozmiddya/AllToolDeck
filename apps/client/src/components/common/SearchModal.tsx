@@ -172,14 +172,14 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
                     isSelected ? "bg-primary/20 border-l-4 border-primary pl-2.5" : "bg-transparent hover:bg-surface-light"
                   }`}
                 >
-                  <div className="flex flex-col">
-                    <span className="font-bold text-sm text-text flex items-center gap-2">
+                  <div className="flex flex-col min-w-0 flex-1 mr-4">
+                    <span className="font-bold text-sm text-text flex items-center gap-2 flex-wrap">
                       {tool.name}
                       <span className="text-[10px] uppercase font-mono font-bold tracking-wider text-muted bg-surface-light px-1.5 py-0.5 rounded border border-border/30">
                         {tool.category}
                       </span>
                     </span>
-                    <span className="text-xs text-muted mt-1 max-w-[350px] truncate">{tool.description}</span>
+                    <span className="text-xs text-muted mt-1 w-full truncate">{tool.description}</span>
                   </div>
                   {isSelected && (
                     <span className="text-[10px] text-primary font-mono flex items-center gap-1">

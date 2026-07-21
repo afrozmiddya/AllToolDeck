@@ -1,3 +1,5 @@
 # ads.txt placeholder for AllToolDeck
 # Add your Google AdSense publisher line here:
 # google.com, pub-1555555705397171, DIRECT, f08c47fec0942fa0
+
+google.com, pub-1555555705397171, DIRECT, f08c47fec0942fa0

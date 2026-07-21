@@ -7,6 +7,7 @@ import {
   Search, ChevronRight, ArrowRight, HelpCircle, 
   FolderClosed, Layers, ShieldCheck
 } from "lucide-react";
+import { Container } from "@/components/common/PageLayout";
 
 interface CategoryPageProps {
   categoryKey: string;
@@ -105,7 +106,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey }) => {
   const schemas = [breadcrumbSchema, itemListSchema, faqSchema];
 
   return (
-    <div className="max-w-5xl mx-auto py-4 space-y-12">
+    <Container size="5xl" className="py-4 space-y-12">
       <SEO 
         title={category.title} 
         description={category.description} 
@@ -231,7 +232,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey }) => {
           ))}
         </div>
       </footer>
-    </div>
+    </Container>
   );
 };
 export default CategoryPage;

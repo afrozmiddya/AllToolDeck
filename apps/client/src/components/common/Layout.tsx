@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { SEO } from "./SEO";
 import { toolsRegistry } from "@/data/toolsRegistry";
 import { SearchModal } from "./SearchModal";
+import { Container } from "./PageLayout";
 
 export const Layout: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -80,26 +81,30 @@ export const Layout: React.FC = () => {
 
       {/* Header */}
       <header
-        className={`sticky top-5 z-50 w-full border-b transition-all duration-300 ${
+        className={`sticky top-0 z-50 w-full border-b transition-all duration-300 ${
           scrolled
             ? "border-border bg-surface/60 backdrop-blur-xl shadow-md shadow-black/10"
             : "border-transparent bg-transparent"
         }`}
       >
-        <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-8">
+        <Container size="7xl" className="flex h-16 items-center justify-between gap-4">
           <Link to="/" className="flex items-center group cursor-pointer z-10 -ml-2 p-2">
-            <img src="https://res.cloudinary.com/dz0xmodpo/image/upload/v1783541482/logo_kprqro.png" alt="AllToolDeck Logo" className="h-10 w-auto object-contain drop-shadow-sm transition-opacity group-hover:opacity-80" />
+            <img 
+              src="https://res.cloudinary.com/dz0xmodpo/image/upload/v1783541482/logo_kprqro.png" 
+              alt="AllToolDeck Logo" 
+              className="h-24 w-auto object-contain transition-opacity group-hover:opacity-80" 
+            />
           </Link>
 
-          {/* Premium Search Trigger Button */}
+          {/* Rebuilt Search Trigger Button */}
           <div 
             onClick={() => setIsSearchOpen(true)}
-            className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-full max-w-md items-center cursor-pointer"
+            className="hidden md:flex flex-grow max-w-md items-center cursor-pointer z-10"
           >
-            <div className="w-full flex items-center rounded-full border border-border bg-surface/50 py-2 pl-10 pr-4 text-sm text-muted hover:border-primary/50 hover:bg-surface transition-all select-none">
-              <Search className="absolute left-3.5 h-4 w-4" />
-              <span>Search tools (e.g. merge pdf, resize)...</span>
-              <kbd className="ml-auto pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border border-border/30 bg-surface-light px-1.5 font-mono text-[10px] font-medium text-muted opacity-100">
+            <div className="w-full flex items-center rounded-xl border border-border bg-surface/50 py-2 px-4 text-sm text-muted hover:border-primary/50 hover:bg-surface transition-all select-none">
+              <Search className="h-4 w-4 mr-2 text-muted flex-shrink-0" />
+              <span className="truncate whitespace-nowrap">Search tools (e.g. merge pdf, resize)...</span>
+              <kbd className="ml-auto pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border border-border/30 bg-surface-light px-1.5 font-mono text-[10px] font-medium text-muted opacity-100 flex-shrink-0">
                 <span>Ctrl</span>K
               </kbd>
             </div>
@@ -112,37 +117,39 @@ export const Layout: React.FC = () => {
             <Link to="/security" className="transition-colors hover:text-primary text-muted cursor-pointer hidden sm:block">Security</Link>
             <Link to="/blog" className="transition-colors hover:text-primary text-muted cursor-pointer">Blog</Link>
           </nav>
-        </div>
+        </Container>
       </header>
 
       {/* Global Search Modal overlay */}
       <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
 
       {/* Main Content */}
-      <main className="relative z-10 flex-1 container mx-auto max-w-7xl px-4 lg:px-8 py-8 md:py-12">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={location.pathname}
-            initial={{ opacity: 0, y: 10, filter: "blur(5px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            exit={{ opacity: 0, y: -10, filter: "blur(5px)" }}
-            transition={{ duration: 0.3 }}
-          >
-            <Outlet />
-          </motion.div>
-        </AnimatePresence>
+      <main className="relative z-10 flex-1 py-8 md:py-12">
+        <Container size="7xl">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={location.pathname}
+              initial={{ opacity: 0, y: 10, filter: "blur(5px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, y: -10, filter: "blur(5px)" }}
+              transition={{ duration: 0.3 }}
+            >
+              <Outlet />
+            </motion.div>
+          </AnimatePresence>
+        </Container>
       </main>
 
       {/* Footer */}
       <footer className="relative z-10 border-t border-border mt-auto">
-        <div className="container mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 py-8 md:h-16 md:flex-row md:py-0 px-4 lg:px-8 text-sm text-muted">
+        <Container size="7xl" className="flex flex-col items-center justify-between gap-4 py-8 md:h-16 md:flex-row md:py-0 text-sm text-muted">
           <p>© {new Date().getFullYear()} AllToolDeck. All rights reserved.</p>
           <div className="flex gap-4">
             <Link to="/sitemap" className="hover:text-text transition-colors">Sitemap</Link>
             <Link to="/privacy" className="hover:text-text transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-text transition-colors">Terms of Service</Link>
           </div>
-        </div>
+        </Container>
       </footer>
     </div>
   );

@@ -8,6 +8,7 @@ import {
   Zap, ShieldCheck, Cpu, HardDrive, Plus,
   ChevronRight, ArrowRight, HelpCircle, Star, Layers
 } from "lucide-react";
+import { Section, Grid } from "@/components/common/PageLayout";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -93,7 +94,7 @@ export const HomePage: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center py-12 space-y-24 relative">
+    <div className="w-full relative">
       <SEO 
         title="AllToolDeck - Free Browser-Based Productivity Tools"
         description="Access free browser-based productivity tools. Secure, lightning fast utilities for PDF merging, image compression, JSON formatting, password generation, and AI background removal."
@@ -102,7 +103,7 @@ export const HomePage: React.FC = () => {
       />
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center text-center">
+      <Section className="relative z-10 max-w-4xl mx-auto flex flex-col items-center text-center pb-16 md:pb-24">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -190,167 +191,172 @@ export const HomePage: React.FC = () => {
           <div className="flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-success" /> 100% Client-Side</div>
           <div className="flex items-center gap-2"><Cpu className="w-4 h-4 text-accent" /> GPU AI Processing</div>
         </motion.div>
-      </div>
+      </Section>
 
       {/* Mapped Categories Grid */}
-      <section className="w-full max-w-6xl space-y-6">
-        <h2 className="text-xl md:text-2xl font-bold font-heading text-center text-text flex items-center justify-center gap-2">
+      <Section className="w-full max-w-6xl mx-auto border-t border-border/20 pt-16">
+        <h2 className="text-xl md:text-2xl font-bold font-heading text-center text-text flex items-center justify-center gap-2 mb-8">
           <Layers className="w-5 h-5 text-primary" />
           Explore Tool Categories
         </h2>
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          <motion.div variants={itemVariants} className="h-full">
-            <Link to="/pdf" className="group flex flex-col h-full p-6 border border-border/30 rounded-2xl bg-surface/20 hover:border-primary/50 transition-all hover:scale-[1.02] shadow-md">
-              <div className="w-10 h-10 rounded-xl bg-background border border-border text-primary flex items-center justify-center mb-4 group-hover:scale-115 transition-transform"><FileText className="w-5 h-5" /></div>
-              <h3 className="font-heading font-bold text-text mb-2 text-lg group-hover:text-primary transition-colors">PDF Tools</h3>
-              <p className="text-xs text-muted leading-relaxed line-clamp-2">Merge, split, compress, protect, and convert PDF documents locally.</p>
-            </Link>
-          </motion.div>
+          <Grid cols={4}>
+            <motion.div variants={itemVariants} className="h-full">
+              <Link to="/pdf" className="group flex flex-col h-full p-6 border border-border/30 rounded-2xl bg-surface/20 hover:border-primary/50 transition-all hover:scale-[1.02] shadow-md">
+                <div className="w-10 h-10 rounded-xl bg-background border border-border text-primary flex items-center justify-center mb-4 group-hover:scale-115 transition-transform"><FileText className="w-5 h-5" /></div>
+                <h3 className="font-heading font-bold text-text mb-2 text-lg group-hover:text-primary transition-colors">PDF Tools</h3>
+                <p className="text-xs text-muted leading-relaxed line-clamp-2">Merge, split, compress, protect, and convert PDF documents locally.</p>
+              </Link>
+            </motion.div>
 
-          <motion.div variants={itemVariants} className="h-full">
-            <Link to="/image" className="group flex flex-col h-full p-6 border border-border/30 rounded-2xl bg-surface/20 hover:border-success/50 transition-all hover:scale-[1.02] shadow-md">
-              <div className="w-10 h-10 rounded-xl bg-background border border-border text-success flex items-center justify-center mb-4 group-hover:scale-115 transition-transform"><ImageIcon className="w-5 h-5" /></div>
-              <h3 className="font-heading font-bold text-text mb-2 text-lg group-hover:text-success transition-colors">Image Tools</h3>
-              <p className="text-xs text-muted leading-relaxed line-clamp-2">Resize, compress, convert formats, and remove image backgrounds.</p>
-            </Link>
-          </motion.div>
+            <motion.div variants={itemVariants} className="h-full">
+              <Link to="/image" className="group flex flex-col h-full p-6 border border-border/30 rounded-2xl bg-surface/20 hover:border-success/50 transition-all hover:scale-[1.02] shadow-md">
+                <div className="w-10 h-10 rounded-xl bg-background border border-border text-success flex items-center justify-center mb-4 group-hover:scale-115 transition-transform"><ImageIcon className="w-5 h-5" /></div>
+                <h3 className="font-heading font-bold text-text mb-2 text-lg group-hover:text-success transition-colors">Image Tools</h3>
+                <p className="text-xs text-muted leading-relaxed line-clamp-2">Resize, compress, convert formats, and remove image backgrounds.</p>
+              </Link>
+            </motion.div>
 
-          <motion.div variants={itemVariants} className="h-full">
-            <Link to="/text" className="group flex flex-col h-full p-6 border border-border/30 rounded-2xl bg-surface/20 hover:border-accent/50 transition-all hover:scale-[1.02] shadow-md">
-              <div className="w-10 h-10 rounded-xl bg-background border border-border text-accent flex items-center justify-center mb-4 group-hover:scale-115 transition-transform"><Type className="w-5 h-5" /></div>
-              <h3 className="font-heading font-bold text-text mb-2 text-lg group-hover:text-accent transition-colors">Text Tools</h3>
-              <p className="text-xs text-muted leading-relaxed line-clamp-2">Count words, check differences, format JSON, and clean lists.</p>
-            </Link>
-          </motion.div>
+            <motion.div variants={itemVariants} className="h-full">
+              <Link to="/text" className="group flex flex-col h-full p-6 border border-border/30 rounded-2xl bg-surface/20 hover:border-accent/50 transition-all hover:scale-[1.02] shadow-md">
+                <div className="w-10 h-10 rounded-xl bg-background border border-border text-accent flex items-center justify-center mb-4 group-hover:scale-115 transition-transform"><Type className="w-5 h-5" /></div>
+                <h3 className="font-heading font-bold text-text mb-2 text-lg group-hover:text-accent transition-colors">Text Tools</h3>
+                <p className="text-xs text-muted leading-relaxed line-clamp-2">Count words, check differences, format JSON, and clean lists.</p>
+              </Link>
+            </motion.div>
 
-          <motion.div variants={itemVariants} className="h-full">
-            <Link to="/developer" className="group flex flex-col h-full p-6 border border-border/30 rounded-2xl bg-surface/20 hover:border-warning/50 transition-all hover:scale-[1.02] shadow-md">
-              <div className="w-10 h-10 rounded-xl bg-background border border-border text-warning flex items-center justify-center mb-4 group-hover:scale-115 transition-transform"><Cpu className="w-5 h-5" /></div>
-              <h3 className="font-heading font-bold text-text mb-2 text-lg group-hover:text-warning transition-colors">Developer Tools</h3>
-              <p className="text-xs text-muted leading-relaxed line-clamp-2">Base64 encoding, JWT parsing, and SHA-256 hash checksums.</p>
-            </Link>
-          </motion.div>
+            <motion.div variants={itemVariants} className="h-full">
+              <Link to="/developer" className="group flex flex-col h-full p-6 border border-border/30 rounded-2xl bg-surface/20 hover:border-warning/50 transition-all hover:scale-[1.02] shadow-md">
+                <div className="w-10 h-10 rounded-xl bg-background border border-border text-warning flex items-center justify-center mb-4 group-hover:scale-115 transition-transform"><Cpu className="w-5 h-5" /></div>
+                <h3 className="font-heading font-bold text-text mb-2 text-lg group-hover:text-warning transition-colors">Developer Tools</h3>
+                <p className="text-xs text-muted leading-relaxed line-clamp-2">Base64 encoding, JWT parsing, and SHA-256 hash checksums.</p>
+              </Link>
+            </motion.div>
+          </Grid>
         </motion.div>
 
         {/* Secondary Category tags */}
-        <div className="flex flex-wrap justify-center gap-3 pt-2">
+        <div className="flex flex-wrap justify-center gap-3 pt-8">
           <Link to="/ai" className="px-4 py-1.5 border border-border/30 rounded-full text-xs font-mono text-muted hover:border-primary hover:text-text transition-all bg-surface/10">AI Tools</Link>
           <Link to="/qr-barcode" className="px-4 py-1.5 border border-border/30 rounded-full text-xs font-mono text-muted hover:border-primary hover:text-text transition-all bg-surface/10">QR & Barcode Tools</Link>
           <Link to="/calculators" className="px-4 py-1.5 border border-border/30 rounded-full text-xs font-mono text-muted hover:border-primary hover:text-text transition-all bg-surface/10">Calculators</Link>
         </div>
-      </section>
+      </Section>
 
       {/* Popular and Recently Added Tools */}
-      <section className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12">
-        {/* Popular tools */}
-        <div className="space-y-6">
-          <h2 className="text-lg font-bold font-heading text-text flex items-center gap-2">
-            <Star className="w-5 h-5 text-primary" />
-            Popular Tools
-          </h2>
-          <div className="space-y-4">
-            <Link to="/pdf/merge" className="flex items-center justify-between p-4 border border-border/20 rounded-xl bg-surface/10 hover:border-primary/40 hover:bg-surface/20 transition-all group">
-              <div>
-                <h3 className="font-bold text-text text-sm group-hover:text-primary transition-colors">Merge PDF Documents</h3>
-                <p className="text-xs text-muted mt-0.5">Combine multi-page worksheets client-side.</p>
-              </div>
-              <ArrowRight className="w-4 h-4 text-muted group-hover:translate-x-1 transition-transform" />
-            </Link>
+      <Section className="w-full max-w-6xl mx-auto border-t border-border/20 pt-16">
+        <Grid cols={2} className="gap-12">
+          {/* Popular tools */}
+          <div className="space-y-6">
+            <h2 className="text-lg font-bold font-heading text-text flex items-center gap-2">
+              <Star className="w-5 h-5 text-primary" />
+              Popular Tools
+            </h2>
+            <div className="space-y-4">
+              <Link to="/pdf/merge" className="flex items-center justify-between p-4 border border-border/20 rounded-xl bg-surface/10 hover:border-primary/40 hover:bg-surface/20 transition-all group">
+                <div>
+                  <h3 className="font-bold text-text text-sm group-hover:text-primary transition-colors">Merge PDF Documents</h3>
+                  <p className="text-xs text-muted mt-0.5">Combine multi-page worksheets client-side.</p>
+                </div>
+                <ArrowRight className="w-4 h-4 text-muted group-hover:translate-x-1 transition-transform" />
+              </Link>
 
-            <Link to="/image/background-remover" className="flex items-center justify-between p-4 border border-border/20 rounded-xl bg-surface/10 hover:border-success/40 hover:bg-surface/20 transition-all group">
-              <div>
-                <h3 className="font-bold text-text text-sm group-hover:text-success transition-colors">AI Background Remover</h3>
-                <p className="text-xs text-muted mt-0.5">Erase photo backgrounds with local ONNX model.</p>
-              </div>
-              <ArrowRight className="w-4 h-4 text-muted group-hover:translate-x-1 transition-transform" />
-            </Link>
+              <Link to="/image/background-remover" className="flex items-center justify-between p-4 border border-border/20 rounded-xl bg-surface/10 hover:border-success/40 hover:bg-surface/20 transition-all group">
+                <div>
+                  <h3 className="font-bold text-text text-sm group-hover:text-success transition-colors">AI Background Remover</h3>
+                  <p className="text-xs text-muted mt-0.5">Erase photo backgrounds with local ONNX model.</p>
+                </div>
+                <ArrowRight className="w-4 h-4 text-muted group-hover:translate-x-1 transition-transform" />
+              </Link>
 
-            <Link to="/text/word-counter" className="flex items-center justify-between p-4 border border-border/20 rounded-xl bg-surface/10 hover:border-accent/40 hover:bg-surface/20 transition-all group">
-              <div>
-                <h3 className="font-bold text-text text-sm group-hover:text-accent transition-colors">Word & Character Counter</h3>
-                <p className="text-xs text-muted mt-0.5">Compute character lists and reading times.</p>
-              </div>
-              <ArrowRight className="w-4 h-4 text-muted group-hover:translate-x-1 transition-transform" />
-            </Link>
+              <Link to="/text/word-counter" className="flex items-center justify-between p-4 border border-border/20 rounded-xl bg-surface/10 hover:border-accent/40 hover:bg-surface/20 transition-all group">
+                <div>
+                  <h3 className="font-bold text-text text-sm group-hover:text-accent transition-colors">Word & Character Counter</h3>
+                  <p className="text-xs text-muted mt-0.5">Compute character lists and reading times.</p>
+                </div>
+                <ArrowRight className="w-4 h-4 text-muted group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
           </div>
-        </div>
 
-        {/* Recently Added */}
-        <div className="space-y-6">
-          <h2 className="text-lg font-bold font-heading text-text flex items-center gap-2">
-            <Plus className="w-5 h-5 text-accent" />
-            Recently Added Tools
-          </h2>
-          <div className="space-y-4">
-            <Link to="/security/jwt" className="flex items-center justify-between p-4 border border-border/20 rounded-xl bg-surface/10 hover:border-warning/40 hover:bg-surface/20 transition-all group">
-              <div>
-                <h3 className="font-bold text-text text-sm group-hover:text-warning transition-colors">JWT Claims Decoder</h3>
-                <p className="text-xs text-muted mt-0.5">Deconstruct JSON Web Tokens locally securely.</p>
-              </div>
-              <ArrowRight className="w-4 h-4 text-muted group-hover:translate-x-1 transition-transform" />
-            </Link>
+          {/* Recently Added */}
+          <div className="space-y-6">
+            <h2 className="text-lg font-bold font-heading text-text flex items-center gap-2">
+              <Plus className="w-5 h-5 text-accent" />
+              Recently Added Tools
+            </h2>
+            <div className="space-y-4">
+              <Link to="/security/jwt" className="flex items-center justify-between p-4 border border-border/20 rounded-xl bg-surface/10 hover:border-warning/40 hover:bg-surface/20 transition-all group">
+                <div>
+                  <h3 className="font-bold text-text text-sm group-hover:text-warning transition-colors">JWT Claims Decoder</h3>
+                  <p className="text-xs text-muted mt-0.5">Deconstruct JSON Web Tokens locally securely.</p>
+                </div>
+                <ArrowRight className="w-4 h-4 text-muted group-hover:translate-x-1 transition-transform" />
+              </Link>
 
-            <Link to="/pdf/to-word" className="flex items-center justify-between p-4 border border-border/20 rounded-xl bg-surface/10 hover:border-primary/40 hover:bg-surface/20 transition-all group">
-              <div>
-                <h3 className="font-bold text-text text-sm group-hover:text-primary transition-colors">PDF to Word Converter</h3>
-                <p className="text-xs text-muted mt-0.5">Extract printable text logs into DOCX outlines.</p>
-              </div>
-              <ArrowRight className="w-4 h-4 text-muted group-hover:translate-x-1 transition-transform" />
-            </Link>
+              <Link to="/pdf/to-word" className="flex items-center justify-between p-4 border border-border/20 rounded-xl bg-surface/10 hover:border-primary/40 hover:bg-surface/20 transition-all group">
+                <div>
+                  <h3 className="font-bold text-text text-sm group-hover:text-primary transition-colors">PDF to Word Converter</h3>
+                  <p className="text-xs text-muted mt-0.5">Extract printable text logs into DOCX outlines.</p>
+                </div>
+                <ArrowRight className="w-4 h-4 text-muted group-hover:translate-x-1 transition-transform" />
+              </Link>
 
-            <Link to="/security/qr-scanner" className="flex items-center justify-between p-4 border border-border/20 rounded-xl bg-surface/10 hover:border-accent/40 hover:bg-surface/20 transition-all group">
-              <div>
-                <h3 className="font-bold text-text text-sm group-hover:text-accent transition-colors">QR Code Scanner</h3>
-                <p className="text-xs text-muted mt-0.5">Analyze and scan QR pixel tags locally.</p>
-              </div>
-              <ArrowRight className="w-4 h-4 text-muted group-hover:translate-x-1 transition-transform" />
-            </Link>
+              <Link to="/security/qr-scanner" className="flex items-center justify-between p-4 border border-border/20 rounded-xl bg-surface/10 hover:border-accent/40 hover:bg-surface/20 transition-all group">
+                <div>
+                  <h3 className="font-bold text-text text-sm group-hover:text-accent transition-colors">QR Code Scanner</h3>
+                  <p className="text-xs text-muted mt-0.5">Analyze and scan QR pixel tags locally.</p>
+                </div>
+                <ArrowRight className="w-4 h-4 text-muted group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </Grid>
+      </Section>
 
       {/* Why Choose AllToolDeck Section */}
-      <section className="w-full max-w-6xl border border-border/30 rounded-3xl p-8 md:p-12 bg-surface/10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <div className="space-y-6">
-          <h2 className="text-2xl md:text-3xl font-heading font-extrabold text-text leading-tight">
-            Why Choose AllToolDeck?
-          </h2>
-          <p className="text-sm md:text-base text-muted leading-relaxed">
-            Most online utilities require you to upload your files to remote cloud servers. This exposes your personal documents to databases, server logs, and security vulnerabilities. AllToolDeck operates completely in your web browser tab.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-semibold">
-            <div className="flex items-center gap-2 text-text/90"><ShieldCheck className="w-4.5 h-4.5 text-success" /> Zero Uploads</div>
-            <div className="flex items-center gap-2 text-text/90"><Zap className="w-4.5 h-4.5 text-primary" /> Instant Builds</div>
-            <div className="flex items-center gap-2 text-text/90"><Cpu className="w-4.5 h-4.5 text-accent" /> No Limits</div>
-            <div className="flex items-center gap-2 text-text/90"><HardDrive className="w-4.5 h-4.5 text-warning" /> Offline PWA</div>
+      <Section className="w-full max-w-6xl mx-auto border-t border-border/20 pt-16">
+        <div className="border border-border/30 rounded-3xl p-8 md:p-12 bg-surface/10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="space-y-6">
+            <h2 className="text-2xl md:text-3xl font-heading font-extrabold text-text leading-tight">
+              Why Choose AllToolDeck?
+            </h2>
+            <p className="text-sm md:text-base text-muted leading-relaxed">
+              Most online utilities require you to upload your files to remote cloud servers. This exposes your personal documents to databases, server logs, and security vulnerabilities. AllToolDeck operates completely in your web browser tab.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-semibold">
+              <div className="flex items-center gap-2 text-text/90"><ShieldCheck className="w-4.5 h-4.5 text-success" /> Zero Uploads</div>
+              <div className="flex items-center gap-2 text-text/90"><Zap className="w-4.5 h-4.5 text-primary" /> Instant Builds</div>
+              <div className="flex items-center gap-2 text-text/90"><Cpu className="w-4.5 h-4.5 text-accent" /> No Limits</div>
+              <div className="flex items-center gap-2 text-text/90"><HardDrive className="w-4.5 h-4.5 text-warning" /> Offline PWA</div>
+            </div>
           </div>
-        </div>
 
-        {/* Statistics section */}
-        <div className="grid grid-cols-2 gap-6">
-          <div className="p-6 rounded-2xl bg-surface/20 border border-border/20 text-center space-y-2">
-            <p className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">30+</p>
-            <p className="text-xs font-mono tracking-wider uppercase text-muted">Secure Tools</p>
-          </div>
-          <div className="p-6 rounded-2xl bg-surface/20 border border-border/20 text-center space-y-2">
-            <p className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">100%</p>
-            <p className="text-xs font-mono tracking-wider uppercase text-muted">Client-Side</p>
-          </div>
-          <div className="p-6 rounded-2xl bg-surface/20 border border-border/20 text-center space-y-2 col-span-2">
-            <p className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">0 KB</p>
-            <p className="text-xs font-mono tracking-wider uppercase text-muted">Files Data Transmitted</p>
+          {/* Statistics section */}
+          <div className="grid grid-cols-2 gap-6">
+            <div className="p-6 rounded-2xl bg-surface/20 border border-border/20 text-center space-y-2">
+              <p className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">30+</p>
+              <p className="text-xs font-mono tracking-wider uppercase text-muted">Secure Tools</p>
+            </div>
+            <div className="p-6 rounded-2xl bg-surface/20 border border-border/20 text-center space-y-2">
+              <p className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">100%</p>
+              <p className="text-xs font-mono tracking-wider uppercase text-muted">Client-Side</p>
+            </div>
+            <div className="p-6 rounded-2xl bg-surface/20 border border-border/20 text-center space-y-2 col-span-2">
+              <p className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">0 KB</p>
+              <p className="text-xs font-mono tracking-wider uppercase text-muted">Files Data Transmitted</p>
+            </div>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* FAQ Accordion Section */}
-      <section className="w-full max-w-4xl space-y-6">
-        <h2 className="text-xl md:text-2xl font-bold font-heading text-center text-text flex items-center justify-center gap-2">
+      <Section className="w-full max-w-4xl mx-auto border-t border-border/20 pt-16">
+        <h2 className="text-xl md:text-2xl font-bold font-heading text-center text-text flex items-center justify-center gap-2 mb-8">
           <HelpCircle className="w-5 h-5 text-accent" />
           Frequently Asked Questions
         </h2>
@@ -369,7 +375,7 @@ export const HomePage: React.FC = () => {
             </details>
           ))}
         </div>
-      </section>
+      </Section>
     </div>
   );
 };

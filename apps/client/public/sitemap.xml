@@ -6,31 +6,31 @@
 >
   <url>
     <loc>https://alltooldeck.netlify.app/</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/privacy</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/terms</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/sitemap</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/pdf</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -40,7 +40,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/image</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -50,7 +50,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/text</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -60,7 +60,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/security</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -70,7 +70,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/developer</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -80,7 +80,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/ai</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -90,7 +90,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/qr-barcode</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -100,7 +100,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/calculators</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -110,7 +110,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/pdf/merge</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -122,12 +122,12 @@
       <video:title>How to use PDF Merger - AllToolDeck Guide</video:title>
       <video:description>Step-by-step video explanation on how to run PDF Merger securely and locally inside your web browser.</video:description>
       <video:content_loc>https://alltooldeck.netlify.app/videos/merge.mp4</video:content_loc>
-      <video:publication_date>2026-07-09</video:publication_date>
+      <video:publication_date>2026-07-21</video:publication_date>
     </video:video>
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/pdf/split</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -137,7 +137,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/pdf/compress</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -147,7 +147,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/pdf/rotate</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -157,7 +157,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/pdf/to-jpg</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -167,7 +167,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/pdf/from-jpg</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -177,7 +177,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/pdf/protect</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -187,7 +187,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/pdf/unlock</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -197,7 +197,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/pdf/to-word</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -207,7 +207,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/pdf/from-word</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -217,7 +217,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/image/convert</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -227,7 +227,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/image/resize</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -237,7 +237,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/image/compress</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -247,7 +247,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/image/crop</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -257,7 +257,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/image/rotate</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -267,7 +267,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/image/background-remover</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -279,12 +279,12 @@
       <video:title>How to use Background Remover - AllToolDeck Guide</video:title>
       <video:description>Step-by-step video explanation on how to run Background Remover securely and locally inside your web browser.</video:description>
       <video:content_loc>https://alltooldeck.netlify.app/videos/background-remover.mp4</video:content_loc>
-      <video:publication_date>2026-07-09</video:publication_date>
+      <video:publication_date>2026-07-21</video:publication_date>
     </video:video>
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/image/to-pdf</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -294,7 +294,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/text/word-counter</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -304,7 +304,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/text/json-formatter</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -316,12 +316,12 @@
       <video:title>How to use JSON Formatter - AllToolDeck Guide</video:title>
       <video:description>Step-by-step video explanation on how to run JSON Formatter securely and locally inside your web browser.</video:description>
       <video:content_loc>https://alltooldeck.netlify.app/videos/json-formatter.mp4</video:content_loc>
-      <video:publication_date>2026-07-09</video:publication_date>
+      <video:publication_date>2026-07-21</video:publication_date>
     </video:video>
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/text/case-converter</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -331,7 +331,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/text/remove-spaces</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -341,7 +341,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/text/remove-duplicates</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -351,7 +351,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/text/reverse</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -361,7 +361,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/text/sort</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -371,7 +371,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/text/slug-generator</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -381,7 +381,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/text/lorem-ipsum</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -391,7 +391,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/text/difference</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -401,7 +401,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/security/password-generator</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -411,7 +411,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/security/password-strength</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -421,7 +421,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/security/base64</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -431,7 +431,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/security/sha256</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -441,7 +441,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/security/md5</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -451,7 +451,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/security/url</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -461,7 +461,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/security/jwt</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -471,7 +471,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/security/qr-generator</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -481,7 +481,7 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/security/qr-scanner</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -491,13 +491,13 @@
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/blog</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alltooldeck.netlify.app/blog/why-browser-based-tools-are-safer</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
