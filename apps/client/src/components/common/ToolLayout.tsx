@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useLocation, Link } from "react-router-dom";
 import { toolsRegistry } from "@/data/toolsRegistry";
 import { SEO } from "./SEO";
