@@ -18,7 +18,6 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ children }) => {
   const location = useLocation();
   const currentPath = location.pathname;
   const tool = toolsRegistry[currentPath];
-  const [activeTab, setActiveTab] = useState<"tool" | "guide" | "features" | "comparison" | "alternatives" | "faq">("tool");
 
   if (!tool) {
     return <>{children}</>;
@@ -145,71 +144,16 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ children }) => {
         </div>
       </header>
 
-      {/* Main workspace navigation tabs */}
-      <nav 
-        aria-label="Tool sections" 
-        className="flex overflow-x-auto whitespace-nowrap border-b border-border/30 text-sm font-medium scrollbar-none -mx-4 px-4 md:mx-0 md:px-0"
-      >
-        <button
-          onClick={() => setActiveTab("tool")}
-          className={`flex-shrink-0 px-4 py-2 border-b-2 -mb-[2px] transition-colors focus:outline-none ${
-            activeTab === "tool" ? "border-primary text-primary" : "border-transparent text-muted hover:text-text"
-          }`}
-        >
-          Tool Workspace
-        </button>
-        <button
-          onClick={() => setActiveTab("guide")}
-          className={`flex-shrink-0 px-4 py-2 border-b-2 -mb-[2px] transition-colors focus:outline-none ${
-            activeTab === "guide" ? "border-primary text-primary" : "border-transparent text-muted hover:text-text"
-          }`}
-        >
-          How-To Guide
-        </button>
-        <button
-          onClick={() => setActiveTab("features")}
-          className={`flex-shrink-0 px-4 py-2 border-b-2 -mb-[2px] transition-colors focus:outline-none ${
-            activeTab === "features" ? "border-primary text-primary" : "border-transparent text-muted hover:text-text"
-          }`}
-        >
-          Key Features
-        </button>
-        <button
-          onClick={() => setActiveTab("comparison")}
-          className={`flex-shrink-0 px-4 py-2 border-b-2 -mb-[2px] transition-colors focus:outline-none ${
-            activeTab === "comparison" ? "border-primary text-primary" : "border-transparent text-muted hover:text-text"
-          }`}
-        >
-          Tool Comparison
-        </button>
-        <button
-          onClick={() => setActiveTab("alternatives")}
-          className={`flex-shrink-0 px-4 py-2 border-b-2 -mb-[2px] transition-colors focus:outline-none ${
-            activeTab === "alternatives" ? "border-primary text-primary" : "border-transparent text-muted hover:text-text"
-          }`}
-        >
-          Alternatives
-        </button>
-        <button
-          onClick={() => setActiveTab("faq")}
-          className={`flex-shrink-0 px-4 py-2 border-b-2 -mb-[2px] transition-colors focus:outline-none ${
-            activeTab === "faq" ? "border-primary text-primary" : "border-transparent text-muted hover:text-text"
-          }`}
-        >
-          FAQs
-        </button>
-      </nav>
+      {/* Dynamic Content Body (All stacked for SEO) */}
+      <main className="w-full mt-6 space-y-12">
+        
+        {/* Tool Workspace */}
+        <div className="w-full [&>div]:max-w-none [&>div]:py-0 [&>div]:mx-0">
+          {children}
+        </div>
 
-      {/* Dynamic Tab Body */}
-      <main className="w-full mt-2">
-        {activeTab === "tool" && (
-          <div className="w-full [&>div]:max-w-none [&>div]:py-0 [&>div]:mx-0">
-            {children}
-          </div>
-        )}
-
-        {activeTab === "guide" && (
-          <section className="bg-surface/10 border border-border/30 rounded-2xl p-6 md:p-8 space-y-6">
+        {/* How-To Guide */}
+        <section className="bg-surface/10 border border-border/30 rounded-2xl p-6 md:p-8 space-y-6">
             <h2 className="text-xl md:text-2xl font-bold font-heading text-text flex items-center gap-2">
               <BookOpen className="w-5 h-5 text-primary" />
               Step-by-Step Guide: How to Use {tool.name}
@@ -225,10 +169,9 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ children }) => {
               ))}
             </div>
           </section>
-        )}
 
-        {activeTab === "features" && (
-          <section className="bg-surface/10 border border-border/30 rounded-2xl p-6 md:p-8 space-y-6">
+        {/* Features */}
+        <section className="bg-surface/10 border border-border/30 rounded-2xl p-6 md:p-8 space-y-6">
             <h2 className="text-xl md:text-2xl font-bold font-heading text-text flex items-center gap-2">
               <Settings className="w-5 h-5 text-success" />
               Key Features of {tool.name}
@@ -252,10 +195,9 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ children }) => {
               </div>
             </div>
           </section>
-        )}
 
-        {activeTab === "comparison" && (
-          <section className="bg-surface/10 border border-border/30 rounded-2xl p-6 md:p-8 space-y-6 overflow-hidden">
+        {/* Comparison */}
+        <section className="bg-surface/10 border border-border/30 rounded-2xl p-6 md:p-8 space-y-6 overflow-hidden">
             <h2 className="text-xl md:text-2xl font-bold font-heading text-text flex items-center gap-2">
               <ShieldAlert className="w-5 h-5 text-warning" />
               Comparison: Client-Side vs. Cloud Upload Platforms
@@ -294,10 +236,9 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ children }) => {
               </table>
             </div>
           </section>
-        )}
 
-        {activeTab === "alternatives" && (
-          <section className="bg-surface/10 border border-border/30 rounded-2xl p-6 md:p-8 space-y-6">
+        {/* Alternatives */}
+        <section className="bg-surface/10 border border-border/30 rounded-2xl p-6 md:p-8 space-y-6">
             <h2 className="text-xl md:text-2xl font-bold font-heading text-text flex items-center gap-2">
               <Award className="w-5 h-5 text-accent" />
               Secure Alternatives Map
@@ -311,10 +252,13 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ children }) => {
               </ul>
             </div>
           </section>
-        )}
 
-        {activeTab === "faq" && (
-          <section className="space-y-4">
+        {/* FAQ */}
+        <section className="space-y-4">
+          <h2 className="text-xl md:text-2xl font-bold font-heading text-text flex items-center gap-2 mb-6">
+            <HelpCircle className="w-5 h-5 text-primary" />
+            Frequently Asked Questions
+          </h2>
             {tool.faqs && tool.faqs.length > 0 ? (
               tool.faqs.map((faq, idx) => (
                 <details key={idx} className="group border border-border/30 rounded-xl bg-surface/15 overflow-hidden transition-all duration-300 [&_summary::-webkit-details-marker]:hidden">
@@ -333,7 +277,6 @@ export const ToolLayout: React.FC<ToolLayoutProps> = ({ children }) => {
               <div className="p-6 text-center text-muted">No FAQs defined for this tool yet.</div>
             )}
           </section>
-        )}
       </main>
 
       {/* Related Tools */}

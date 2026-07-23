@@ -55,6 +55,14 @@ export const HomePage: React.FC = () => {
     {
       question: "Can I use AllToolDeck offline?",
       answer: "Yes, our tools are fully offline-capable since all utility scripts run client-side. You can install AllToolDeck as a PWA (Progressive Web App) to launch it offline anytime."
+    },
+    {
+      question: "What types of tools are available on AllToolDeck?",
+      answer: "AllToolDeck offers a comprehensive suite of digital utilities including PDF manipulation (merge, split, compress), Image editing (format conversion, cropping, background removal), Text processing (formatting, string manipulation), and Security tools (password generation, hashing, encryption)."
+    },
+    {
+      question: "Is there a file size limit for PDF and Image tools?",
+      answer: "Because AllToolDeck processes files directly on your local device's hardware, there are no artificial server-side file size limits. Your processing capability is limited only by your computer or mobile device's available RAM and processing power."
     }
   ];
 
@@ -351,6 +359,31 @@ export const HomePage: React.FC = () => {
               <p className="text-xs font-mono tracking-wider uppercase text-muted">Files Data Transmitted</p>
             </div>
           </div>
+        </div>
+      </Section>
+
+      {/* SEO Content Block */}
+      <Section className="w-full max-w-4xl mx-auto border-t border-border/20 pt-16">
+        <div className="space-y-6 text-sm text-muted leading-relaxed">
+          <h2 className="text-xl md:text-2xl font-bold font-heading text-text mb-4">About AllToolDeck: The Modern Digital Utility Suite</h2>
+          <p>
+            Welcome to <strong>AllToolDeck</strong>, the internet's premier destination for fast, secure, and entirely browser-based productivity tools. In an era where data privacy is paramount, we realized that sending sensitive PDF documents, private images, and confidential data strings to remote cloud servers for simple formatting tasks is an unnecessary security risk.
+          </p>
+          <p>
+            That is why we engineered a suite of over 30+ highly optimized micro-applications that execute entirely within your browser's local sandbox. Utilizing cutting-edge web technologies like WebAssembly, WebGL, and modern JavaScript APIs, AllToolDeck brings desktop-class processing power directly to your web browser without ever requiring a software installation.
+          </p>
+          <h3 className="text-lg font-bold font-heading text-text mt-8 mb-3">Why Choose Client-Side Processing?</h3>
+          <p>
+            Traditional formatters and file converters force you to upload your files to an external server. This introduces three major pain points:
+          </p>
+          <ul className="list-disc pl-5 space-y-2 mb-4">
+            <li><strong>Security Vulnerabilities:</strong> You have no control over how long the server retains your documents or who has access to them.</li>
+            <li><strong>Network Latency:</strong> Waiting for a 100MB PDF to upload on a slow connection just to compress it wastes valuable time.</li>
+            <li><strong>Artificial Limitations:</strong> Cloud providers charge you money or restrict you to "3 files a day" because server bandwidth is expensive.</li>
+          </ul>
+          <p>
+            By leveraging local client-side processing, AllToolDeck eliminates all of these issues instantly. Your files never leave your device, ensuring 100% data confidentiality. Furthermore, because there is no upload phase, processing begins instantly at native CPU speeds, and since you are using your own hardware, we can offer the entire suite completely free of charge with zero file size limits.
+          </p>
         </div>
       </Section>
 

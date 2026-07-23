@@ -35,9 +35,19 @@ export const PrivacyPolicy: React.FC = () => {
             </section>
             
             <section>
-              <h2 className="text-xl font-heading font-semibold text-text mb-3">3. Cookies</h2>
-              <p className="text-muted leading-relaxed">
+              <h2 className="text-xl font-heading font-semibold text-text mb-3">3. Cookies and Third-Party Advertising</h2>
+              <p className="text-muted leading-relaxed mb-4">
                 We use local storage and cookies strictly for functional purposes, such as saving your theme preferences (dark/light mode) and recent tool history.
+              </p>
+              <h3 className="font-heading font-semibold text-text mb-2">Google AdSense and DoubleClick DART Cookie</h3>
+              <p className="text-muted leading-relaxed mb-4">
+                Google, as a third-party vendor, uses cookies to serve ads on our site. Google's use of the DART cookie enables it to serve ads to our users based on previous visits to our site and other sites on the Internet. 
+              </p>
+              <p className="text-muted leading-relaxed mb-4">
+                Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to your website or other websites. Google's use of advertising cookies enables it and its partners to serve ads to your users based on their visit to your sites and/or other sites on the Internet.
+              </p>
+              <p className="text-muted leading-relaxed">
+                Users may opt-out of the use of the DART cookie and personalized advertising by visiting the <a href="https://adssettings.google.com/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Google Ad and Content Network privacy policy</a> or by visiting <a href="http://www.aboutads.info" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">www.aboutads.info</a>.
               </p>
             </section>
             
